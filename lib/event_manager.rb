@@ -90,4 +90,5 @@ class EventManager
   end
 end
 
-EventManager.new.run
+# EventManager.new.run
+# code above will write thank you letters in HTML format
