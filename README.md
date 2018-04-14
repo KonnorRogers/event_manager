@@ -9,6 +9,8 @@ to extrapolate the data.
 EventManager class will read the CSV and parse the data. It will also create
 thank you letters in an output directory in html format using ERB.
 
+![picture of html form letter]()
+
 To create the html output files on a unix system from command line:
 "$ ruby lib/event_manager.rb"
 the project will then run the lib/event_manager.rb file.
