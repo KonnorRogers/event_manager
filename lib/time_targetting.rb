@@ -34,14 +34,14 @@ class TimeTargetting
     @times.each_with_object(@times_hash) { |o, h| h[o] += 1 }
   end
 
+  # returns an array [day, number_of_signups]
   def find_best_day
     day_array = @days.map do |day|
       day.strftime('%A')
     end
 
-    day_array.each_with_object(day_array) { |o, h| h[o] += 1 }
-    day_array.max_by { |_, v| v }
-    # TODO : implement best_day in run
+    day_hash = day_array.each_with_object(Hash.new(0)) { |o, h| h[o] += 1 }
+    day_hash.max_by { |_, v| v }
   end
 
   def determine_best_time
@@ -49,16 +49,17 @@ class TimeTargetting
   end
 
   def run
-    puts 'Determining best time'
+    puts 'Determining best time:'
     signup_times
     create_times_hash
 
     puts ''
     print "The best time to have people sign up is #{determine_best_time[0]}00."
-    print " There were #{determine_best_time[1]} sign ups!\n"
+    print " There were #{determine_best_time[1]} sign ups!\n\n"
+
+    print "The best day for signups is #{find_best_day[0]}.\n"
   end
 end
 
 t = TimeTargetting.new
 t.run
-p t.find_best_day
