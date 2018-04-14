@@ -9,7 +9,7 @@ to extrapolate the data.
 EventManager class will read the CSV and parse the data. It will also create
 thank you letters in an output directory in html format using ERB.
 
-![picture of html form letter]()
+![sample letter](https://github.com/ParamagicDev/event_manager/blob/master/screenshot_of_form_letter.png)
 
 To create the html output files on a unix system from command line:
 "$ ruby lib/event_manager.rb"
@@ -26,3 +26,5 @@ To run the file from command line on a unix system:
 It will then print to the command line the best hour & days to have people signup
 for voting based on the googleAPI CSV. The project was created as part of
 TheOdinProject curriculum.
+
+![command line view](https://github.com/ParamagicDev/event_manager/blob/master/time_targetting.png)
